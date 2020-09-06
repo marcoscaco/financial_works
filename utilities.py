@@ -1,5 +1,13 @@
 import os
 
+def get_top_10_stocks_by_sector(sector):
+    top_stock = list()
+    all_sector_stocks = get_all_stocks_by_sector(sector)
+
+    for i in range(0, 9):
+        top_stock.append(all_sector_stocks[i])
+    return top_stock
+
 def get_all_stocks_by_sector(sector):
     from get_all_tickers import get_tickers
     stocks = get_tickers.get_tickers_filtered(
